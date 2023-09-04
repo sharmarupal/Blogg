@@ -23,13 +23,12 @@ const BlogDetail = () => {
     }));
   };
 
-  const fetchDetails = async () => {
-    const res = await axios.get(`https://my-project-backend-silk.vercel.app/api/blog/${id}`).catch(err => console.log(err));
-    const data = await res.data;
-    return data;
-  }
-
   useEffect(() => {
+    const fetchDetails = async () => {
+      const res = await axios.get(`https://my-project-backend-silk.vercel.app/api/blog/${id}`).catch(err => console.log(err));
+      const data = await res.data;
+      return data;
+    }
     fetchDetails().then(data => {
       setblog(data.blog);
       setInputs({ title: data.blog.title, description: data.blog.description });
