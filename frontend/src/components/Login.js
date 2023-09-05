@@ -52,7 +52,7 @@ export default function SignInSide() {
 
     const sendRequest = async () => {
         const res = await axios
-            .post("https://my-project-backend-silk.vercel.app/api/user/login", {
+            .post("http://localhost:5000/api/user/login", {
                 email: inputs.email,
                 password: inputs.password,
             })

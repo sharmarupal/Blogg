@@ -52,7 +52,7 @@ export default function SignUp() {
     };
 
     const sendRequest = async () => {
-        const res = await axios.post("https://my-project-backend-silk.vercel.app//api/user/signup", {
+        const res = await axios.post("http://localhost:5000/api/user/signup", {
             name: inputs.name,
             email: inputs.email,
             password: inputs.password

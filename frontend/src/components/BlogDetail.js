@@ -25,7 +25,7 @@ const BlogDetail = () => {
 
   useEffect(() => {
     const fetchDetails = async () => {
-      const res = await axios.get(`https://my-project-backend-silk.vercel.app/api/blog/${id}`).catch(err => console.log(err));
+      const res = await axios.get(`http://localhost:3000/api/blog/${id}`).catch(err => console.log(err));
       const data = await res.data;
       return data;
     }
@@ -38,7 +38,7 @@ const BlogDetail = () => {
 
   const sendRequest = async () => {
     const res = await axios
-      .put(`https://my-project-backend-silk.vercel.app/api/blog/update/${id}`, {
+      .put(`http://localhost:5000/api/blog/update/${id}`, {
         title: inputs.title,
         description: inputs.description,
       })
